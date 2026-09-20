@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suscripciones y Pagos Recurrentes con Mercado Pago para WooCommerce | Inobarix</title>
+  <meta name="description" content="Cobrá suscripciones, membresías y pagos recurrentes con Mercado Pago directo desde tu WooCommerce. Sin gestión manual, con webhooks, panel de métricas y soporte real. Pedí tu demo.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Suscripciones y Pagos Recurrentes con Mercado Pago para WooCommerce | Inobarix">
+  <meta property="og:description" content="Cobros automáticos, suscripciones y membresías con Mercado Pago, integrados nativamente a tu WooCommerce.">
+  <!-- TODO: idealmente reemplazar por una imagen 1200x630 optimizada para redes (assets/og-image.jpg) -->
+  <meta property="og:image" content="assets/dashboard-screenshot.png">
+  <meta property="og:locale" content="es_AR">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Google Fonts: Inter, con preconnect para carga óptima -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- ============================= HEADER ============================= -->
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <a href="#top" class="brand" aria-label="Inobarix — inicio">
+        <img src="assets/logo.svg" alt="" width="40" height="40">
+        <span class="brand-name">
+          Inobarix
+          <small>Suscripciones para WooCommerce</small>
+        </span>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú de navegación">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <ul class="nav-links">
+          <li><a href="#beneficios" data-nav-link>Beneficios</a></li>
+          <li><a href="#funciones" data-nav-link>Funciones</a></li>
+          <li><a href="#testimonios" data-nav-link>Testimonios</a></li>
+          <li><a href="#preguntas" data-nav-link>Preguntas frecuentes</a></li>
+        </ul>
+        <a href="#lead-form" class="btn btn-primary nav-cta" data-nav-link>Solicitar demo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ============================= HERO ============================= -->
+    <section class="hero" id="top">
+      <div class="container">
+        <div class="hero-content" data-reveal>
+          <span class="eyebrow">Plugin para WooCommerce · Mercado Pago</span>
+          <h1>Suscripciones mensuales con Mercado Pago y WooCommerce</h1>
+          <p class="lede">Vendé membresías y planes mensuales. El plugin gestiona los cobros, vos te dedicás a tu negocio.</p>
+
+          <div class="hero-actions">
+            <a href="#lead-form" class="btn btn-primary btn-lg">Quiero una demo</a>
+            <a href="#funciones" class="btn btn-secondary btn-lg">Ver funciones</a>
+          </div>
+
+          <div class="hero-trust">
+            <span class="badge badge--stars">
+              <svg viewBox="0 0 20 20" fill="#f5a623" width="16" height="16"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.8L10 1.5z"/></svg>
+              5/5 en reseñas de clientes
+            </span>
+            <span class="badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6l8-4z"/></svg>
+              No almacena datos de tarjeta
+            </span>
+          </div>
+        </div>
+
+        <div class="hero-visual" data-reveal>
+          <div class="module-carousel" id="module-carousel" aria-roledescription="carrusel" aria-label="Módulos del ecosistema Inobarix">
+            <div class="device-frame-bar">
+              <span></span><span></span><span></span>
+            </div>
+
+            <div class="module-carousel-header">
+              <span class="eyebrow">Ecosistema Inobarix</span>
+              <h3>Módulos que suman funciones a tus suscripciones</h3>
+            </div>
+
+            <div class="module-carousel-viewport">
+              <ul class="module-carousel-track" id="module-carousel-track">
+                <li class="module-slide" id="module-organizaciones" data-title="Organizaciones" aria-hidden="false">
+                  <div class="module-slide-top">
+                    <span class="module-icon">O</span>
+                    <span class="module-pill">Disponible</span>
+                  </div>
+                  <h4>Organizaciones</h4>
+                  <p>Gestión de miembros, aprobaciones y credenciales digitales para clubes, academias y comunidades.</p>
+                  <div class="module-slide-footer">
+                    <span>Organizaciones</span>
+                    <span class="module-status">Disponible</span>
+                  </div>
+                </li>
+
+                <li class="module-slide" id="module-tablas" data-title="Tablas de membresías" aria-hidden="true">
+                  <div class="module-slide-top">
+                    <span class="module-icon">T</span>
+                    <span class="module-pill module-pill--active">Activo</span>
+                  </div>
+                  <h4>Tablas de membresías</h4>
+                  <p>Página automática de planes, con tablas de precios listas para publicar en tu tienda.</p>
+                  <div class="module-slide-footer">
+                    <span>Membresías</span>
+                    <span class="module-status module-status--active">Activo</span>
+                  </div>
+                </li>
+
+                <li class="module-slide" id="module-cobros" data-title="Cobros avanzados" aria-hidden="true">
+                  <div class="module-slide-top">
+                    <span class="module-icon">C</span>
+                    <span class="module-pill module-pill--active">Activo</span>
+                  </div>
+                  <h4>Cobros avanzados</h4>
+                  <p>Fecha de cobro fija cada mes, con primera entrega guiada mediante un pago inicial.</p>
+                  <div class="module-slide-footer">
+                    <span>Suscripciones</span>
+                    <span class="module-status module-status--active">Activo</span>
+                  </div>
+                </li>
+
+                <li class="module-slide" id="module-emails" data-title="Emails avanzados" aria-hidden="true">
+                  <div class="module-slide-top">
+                    <span class="module-icon">E</span>
+                    <span class="module-pill module-pill--active">Activo</span>
+                  </div>
+                  <h4>Emails avanzados</h4>
+                  <p>Personalizá asunto, cuerpo y destinatarios de cada email automático del ecosistema.</p>
+                  <div class="module-slide-footer">
+                    <span>Emails</span>
+                    <span class="module-status module-status--active">Activo</span>
+                  </div>
+                </li>
+
+                <li class="module-slide" id="module-pedidos" data-title="Pedidos y envíos recurrentes" aria-hidden="true">
+                  <div class="module-slide-top">
+                    <span class="module-icon">P</span>
+                    <span class="module-pill">Disponible</span>
+                  </div>
+                  <h4>Pedidos y envíos recurrentes</h4>
+                  <p>Genera un pedido de WooCommerce para preparar y despachar cada renovación física.</p>
+                  <div class="module-slide-footer">
+                    <span>Pedidos</span>
+                    <span class="module-status">Disponible</span>
+                  </div>
+                </li>
+
+                <li class="module-slide" id="module-usd" data-title="Precios en USD" aria-hidden="true">
+                  <div class="module-slide-top">
+                    <span class="module-icon">P</span>
+                    <span class="module-pill module-pill--active">Activo</span>
+                  </div>
+                  <h4>Precios en USD</h4>
+                  <p>Mantené tus precios base en dólares y actualizá los importes en pesos de forma automática.</p>
+                  <div class="module-slide-footer">
+                    <span>Precios</span>
+                    <span class="module-status module-status--active">Activo</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="module-carousel-dots" id="module-carousel-dots" role="tablist" aria-label="Elegir módulo a mostrar"></div>
+            <p class="visually-hidden" id="module-carousel-live" role="status" aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= BENEFICIOS ============================= -->
+    <section class="section" id="beneficios">
+      <div class="container">
+        <div class="section-header section-header--center" data-reveal>
+          <span class="eyebrow">Por qué usarlo</span>
+          <h2>Administrá tus suscripciones fácil y rápido</h2>
+          <p>Automatizá todo el sistema de cobros desde un sólo lugar.</p>
+        </div>
+
+        <div class="grid grid--4">
+          <article class="card" data-reveal>
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 11-3.5-7.1"/><path d="M21 3v6h-6"/></svg>
+            </div>
+            <h3>Cobros automáticos, cero seguimiento</h3>
+            <p>El sistema debita y reintenta solo. Se acabó perseguir pagos por WhatsApp o planillas de Excel.</p>
+          </article>
+
+          <article class="card" data-reveal>
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>
+            </div>
+            <h3>Ingresos predecibles cada mes</h3>
+            <p>Con suscripciones activas sabés de antemano cuánto vas a facturar, y podés planificar mejor.</p>
+          </article>
+
+          <article class="card" data-reveal>
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v0"/></svg>
+            </div>
+            <h3>Integración nativa con WooCommerce</h3>
+            <p>Se instala como cualquier plugin y trabaja sobre tus productos, pedidos y clientes actuales.</p>
+          </article>
+
+          <article class="card" data-reveal>
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6l8-4z"/></svg>
+            </div>
+            <h3>Seguridad de verdad</h3>
+            <p>Los datos sensibles de pago los maneja Mercado Pago. En tu WordPress nunca queda guardado un número de tarjeta.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= FUNCIONES ============================= -->
+    <section class="section section--alt" id="funciones">
+      <div class="container">
+        <div class="section-header section-header--center" data-reveal>
+          <span class="eyebrow">Todo lo que incluye</span>
+          <h2>Funciones pensadas para vender más</h2>
+          <p>Desde la primera suscripción hasta la administración diaria, todo dentro de tu WordPress.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <div class="feature-item" data-reveal>
+            <div class="card-icon card--accent">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 8v8M8 12h8"/><circle cx="12" cy="12" r="9"/></svg>
+            </div>
+            <div>
+              <h3>Suscripciones, membresías y planes</h3>
+              <p>Definí abonos mensuales, cuotas periódicas o membresías directamente sobre tus productos simples.</p>
+            </div>
+          </div>
+
+          <div class="feature-item" data-reveal>
+            <div class="card-icon card--accent">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+            </div>
+            <div>
+              <h3>Panel Inobarix con métricas y diagnósticos</h3>
+              <p>Checklist de configuración, métricas de cobros y herramientas de diagnóstico en un solo lugar.</p>
+            </div>
+          </div>
+
+          <div class="feature-item" data-reveal>
+            <div class="card-icon card--accent">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4v5h5M20 20v-5h-5"/><path d="M4.6 15a8 8 0 0014.4 2M19.4 9A8 8 0 005 7"/></svg>
+            </div>
+            <div>
+              <h3>Webhooks y sincronización automática</h3>
+              <p>Endpoint local con registro de eventos de Mercado Pago, más sincronización manual y programada.</p>
+            </div>
+          </div>
+
+          <div class="feature-item" data-reveal>
+            <div class="card-icon card--accent">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            </div>
+            <div>
+              <h3>Vista de cliente en "Mi cuenta"</h3>
+              <p>Tus clientes ven su historial de pagos y el estado de reintentos sin escribirte a preguntar.</p>
+            </div>
+          </div>
+
+          <div class="feature-item" data-reveal>
+            <div class="card-icon card--accent">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+            </div>
+            <div>
+              <h3>Gestión y cancelación de suscripciones</h3>
+              <p>Detalle, sincronización y cancelación de cada suscripción desde el administrador de WordPress.</p>
+            </div>
+          </div>
+
+          <div class="feature-item" data-reveal>
+            <div class="card-icon card--accent">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+            </div>
+            <div>
+              <h3>Compatible con HPOS y Checkout Blocks</h3>
+              <p>Funciona con la administración de pedidos de alto rendimiento y el checkout por bloques de WooCommerce.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="addons-strip" data-reveal>
+          <div class="addons-strip-text">
+            <h3>Un ecosistema de módulos para escalar</h3>
+            <p>Sumá funcionalidad a medida que tu negocio crece, sin salir de Inobarix.</p>
+          </div>
+          <div class="addon-tags">
+            <span>Organizaciones</span>
+            <span>Tablas de membresías</span>
+            <span>Cobros avanzados</span>
+            <span>Emails avanzados</span>
+            <span>Pedidos y envíos recurrentes</span>
+            <span>Precios en USD</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= TESTIMONIOS + CONFIANZA ============================= -->
+    <section class="section" id="testimonios">
+      <div class="container">
+        <div class="section-header section-header--center" data-reveal>
+          <span class="eyebrow">Lo que dicen quienes ya lo usan</span>
+          <h2>Calificado 5/5 por comercios reales</h2>
+          <p>Soporte que responde y un plugin que hace exactamente lo que promete.</p>
+        </div>
+
+        <div class="grid grid--2">
+          <article class="testimonial-card" data-reveal>
+            <div class="stars" aria-hidden="true">
+              <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.8L10 1.5z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.8L10 1.5z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.8L10 1.5z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.8L10 1.5z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.8L10 1.5z"/></svg>
+              <span class="visually-hidden">Calificación: 5 de 5 estrellas</span>
+            </div>
+            <blockquote>&ldquo;Hacía rato que buscaba un plugin que me permita conectar suscripciones con Mercado Pago. Es muy fácil de usar y funciona de diez. Tuve una duda y me contacté con soporte, ¡me atendieron enseguida! Lo súper recomiendo.&rdquo;</blockquote>
+            <footer class="testimonial-author">
+              <span class="author-avatar" aria-hidden="true">JT</span>
+              <div>
+                <div class="author-name">joacotom</div>
+                <div class="author-role">"El plugin definitivo para Mercado Pago"</div>
+              </div>
+            </footer>
+          </article>
+
+          <article class="testimonial-card" data-reveal>
+            <div class="stars" aria-hidden="true">
+              <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.8L10 1.5z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.8L10 1.5z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.8L10 1.5z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.8L10 1.5z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.8L10 1.5z"/></svg>
+              <span class="visually-hidden">Calificación: 5 de 5 estrellas</span>
+            </div>
+            <blockquote>&ldquo;Encontré después de una larga búsqueda un plugin completo que maneja de manera profunda y adecuada las suscripciones, con integración directa y sencilla con Mercado Pago. El soporte es de primera, los chicos son muy atentos y agregan funcionalidades rapidísimo.&rdquo;</blockquote>
+            <footer class="testimonial-author">
+              <span class="author-avatar" aria-hidden="true">CI</span>
+              <div>
+                <div class="author-name">Carlos Ilari</div>
+                <div class="author-role">"El mejor plugin de suscripciones y soporte 10/10"</div>
+              </div>
+            </footer>
+          </article>
+        </div>
+
+        <div class="reassurance-strip" data-reveal>
+          <div class="reassurance-item">
+            <svg viewBox="0 0 20 20" fill="#f5a623"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.8L10 1.5z"/></svg>
+            <strong>Calificación 5/5</strong>
+            <span>En base a reseñas de clientes</span>
+          </div>
+          <div class="reassurance-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6l8-4z"/></svg>
+            <strong>Sin datos de tarjeta</strong>
+            <span>Ni CVV guardados en tu WordPress</span>
+          </div>
+          <div class="reassurance-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12l3 3 5-6"/><circle cx="12" cy="12" r="9"/></svg>
+            <strong>Soporte que responde</strong>
+            <span>Consultas atendidas rápido, en español</span>
+          </div>
+          <div class="reassurance-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg>
+            <strong>Requisitos claros</strong>
+            <span>WP 6.2+ · PHP 7.4+ · WooCommerce 7.8+</span>
+          </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="faq" id="preguntas" data-reveal>
+          <details class="faq-item">
+            <summary>
+              ¿Qué necesito para instalar el plugin?
+              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </summary>
+            <p>Necesitás WordPress 6.2 o superior, PHP 7.4 o superior y WooCommerce 7.8 o superior. Con eso, la instalación es la misma que la de cualquier plugin de WordPress.</p>
+          </details>
+          <details class="faq-item">
+            <summary>
+              ¿El plugin guarda los datos de la tarjeta de mis clientes?
+              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </summary>
+            <p>No. El número de tarjeta, el CVV y las credenciales sensibles nunca se almacenan en WordPress: toda la autorización y el manejo de datos sensibles quedan a cargo de Mercado Pago.</p>
+          </details>
+          <details class="faq-item">
+            <summary>
+              ¿Puedo cobrar en planes mensuales y también cuotas periódicas?
+              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </summary>
+            <p>Sí. Podés configurar suscripciones mensuales, abonos y cuotas periódicas sobre tus productos simples de WooCommerce, con cobro automático vía Mercado Pago.</p>
+          </details>
+          <details class="faq-item">
+            <summary>
+              Si tengo un problema, ¿cómo consigo ayuda?
+              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </summary>
+            <p>Podés escribirnos por WhatsApp con el botón flotante de esta página o dejarnos tus datos en el formulario de abajo. Nuestro soporte responde rápido y en español.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= CTA FINAL + FORMULARIO ============================= -->
+    <section class="section cta-section" id="lead-form">
+      <div class="container">
+        <div class="cta-grid">
+          <div class="cta-intro" data-reveal>
+            <span class="eyebrow" style="background: rgba(255,255,255,0.1); color: var(--color-text-inverse);">Empezá hoy</span>
+            <h2>Dejá de perseguir pagos. Automatizá tus cobros recurrentes con Mercado Pago</h2>
+            <p>Contanos sobre tu tienda y te mostramos cómo funciona el plugin en una demo, sin compromiso.</p>
+
+            <div class="cta-direct-contact">
+              <div class="contact-line">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h4l2 5-2.5 1.5a11 11 0 005 5L13 14l5 2v4a2 2 0 01-2 2C8.5 22 2 15.5 2 7a2 2 0 012-2z"/></svg>
+                <span>¿Preferís hablar directo? Escribinos por <a href="#" id="whatsapp-inline-link">WhatsApp</a></span>
+              </div>
+              <div class="contact-line">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+                <!-- TODO: reemplazar por el email de contacto real -->
+                <span>O escribinos a <a href="mailto:hola@inobarix.com">hola@inobarix.com</a></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lead-form-card" data-reveal>
+            <h3>Solicitá tu demo</h3>
+            <p>Completá el formulario y te contactamos a la brevedad.</p>
+
+            <form id="lead-form-el" novalidate>
+              <div class="form-row">
+                <label for="name">Nombre y apellido</label>
+                <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="error-name">
+                <p class="field-error" id="error-name" role="alert">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/><line x1="12" y1="16" x2="12" y2="16"/></svg>
+                  Contanos tu nombre para poder saludarte.
+                </p>
+              </div>
+
+              <div class="form-row">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="error-email">
+                <p class="field-error" id="error-email" role="alert">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/><line x1="12" y1="16" x2="12" y2="16"/></svg>
+                  Ingresá un email válido para contactarte.
+                </p>
+              </div>
+
+              <div class="form-row">
+                <label for="phone">WhatsApp / Teléfono</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" required aria-describedby="error-phone" placeholder="Ej: 11 2345 6789">
+                <p class="field-error" id="error-phone" role="alert">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/><line x1="12" y1="16" x2="12" y2="16"/></svg>
+                  Dejanos un teléfono de contacto válido.
+                </p>
+              </div>
+
+              <div class="form-row">
+                <label for="store-url">URL de tu tienda <span class="optional">(opcional)</span></label>
+                <input type="url" id="store-url" name="storeUrl" autocomplete="url" placeholder="https://mitienda.com">
+              </div>
+
+              <div class="form-row">
+                <label for="message">Contanos brevemente tu caso <span class="optional">(opcional)</span></label>
+                <textarea id="message" name="message" rows="3" placeholder="Ej: vendo membresías mensuales para un gimnasio..."></textarea>
+              </div>
+
+              <div class="form-row-checkbox">
+                <input type="checkbox" id="consent" name="consent" required aria-describedby="error-consent">
+                <label for="consent">Acepto ser contactado/a por Inobarix para recibir información sobre este producto.</label>
+              </div>
+              <p class="field-error" id="error-consent" role="alert" style="margin-top: calc(var(--space-2) * -1); margin-bottom: var(--space-4);">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/><line x1="12" y1="16" x2="12" y2="16"/></svg>
+                Necesitamos tu consentimiento para poder contactarte.
+              </p>
+
+              <button type="submit" class="btn btn-primary btn-block btn-lg">Solicitar demo gratis</button>
+
+              <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+
+              <p class="form-note">No compartimos tus datos con terceros. Respondemos en menos de 24 hs hábiles.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================= FOOTER ============================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <a href="#top" class="footer-brand" aria-label="Inobarix — inicio">
+          <img src="assets/logo.svg" alt="" width="32" height="32">
+          Inobarix
+        </a>
+        <nav aria-label="Enlaces del pie de página">
+          <ul class="footer-links">
+            <li><a href="#beneficios">Beneficios</a></li>
+            <li><a href="#funciones">Funciones</a></li>
+            <li><a href="#testimonios">Testimonios</a></li>
+            <li><a href="#preguntas">Preguntas frecuentes</a></li>
+            <!-- TODO: reemplazar por la URL real del plugin en WordPress.org -->
+            <li><a href="https://wordpress.org/plugins/" target="_blank" rel="noopener noreferrer">Ver en WordPress.org</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="current-year">2026</span> Inobarix. Todos los derechos reservados.</span>
+        <span>Mercado Pago es marca registrada de sus respectivos titulares. Inobarix no está afiliado a Mercado Pago ni a WooCommerce.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================= WHATSAPP FLOTANTE ============================= -->
+  <a href="#" class="whatsapp-float" id="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Escribinos por WhatsApp">
+    <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.01 3C9.4 3 4 8.4 4 15.01c0 2.5.73 4.83 2 6.78L4 29l7.4-1.94a11.9 11.9 0 004.6.93h.01c6.61 0 12-5.4 12-12.01C28 8.4 22.62 3 16.01 3zm0 21.8c-1.5 0-2.97-.4-4.25-1.16l-.3-.18-4.39 1.15 1.17-4.28-.2-.3a9.7 9.7 0 01-1.5-5.03c0-5.4 4.4-9.8 9.8-9.8 2.62 0 5.08 1.02 6.93 2.87a9.72 9.72 0 012.87 6.93c0 5.4-4.4 9.8-9.8 9.8zm5.4-7.35c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.35.2 1.86.12.57-.08 1.76-.72 2-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"/></svg>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
