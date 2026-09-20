@@ -392,16 +392,31 @@ summary:focus-visible {
   height: var(--header-height);
   display: flex;
   align-items: center;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+/* El blur translúcido vive en un ::before aparte: si "backdrop-filter" estuviera
+   directo en .site-header (que es position:fixed), crearía sin querer un nuevo
+   contenedor de posicionamiento para sus descendientes fixed (como .main-nav),
+   atrapando el menú mobile dentro de los 72px del header en vez de la pantalla. */
+.site-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid transparent;
-  transition: border-color var(--transition-base), box-shadow var(--transition-base), background-color var(--transition-base);
+  transition: background-color var(--transition-base);
 }
 
 .site-header.is-scrolled {
   border-bottom-color: var(--color-border);
   box-shadow: var(--shadow-sm);
+}
+
+.site-header.is-scrolled::before {
   background: rgba(255, 255, 255, 0.92);
 }
 
@@ -415,27 +430,27 @@ summary:focus-visible {
 .brand {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
-  font-weight: var(--fw-bold);
-  font-size: var(--fs-body-lg);
-  color: var(--color-primary);
+  gap: var(--space-3);
 }
 
-.brand img {
-  width: 36px;
-  height: 36px;
+.brand-logo {
+  height: 22px;
+  width: auto;
 }
 
-.brand-name {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
-
-.brand-name small {
+.brand-tagline {
   font-weight: var(--fw-regular);
   font-size: var(--fs-caption);
   color: var(--color-text-soft);
+  padding-left: var(--space-3);
+  border-left: 1px solid var(--color-border-strong);
+  display: none;
+}
+
+@media (min-width: 480px) {
+  .brand-tagline {
+    display: block;
+  }
 }
 
 .nav-toggle {
@@ -597,13 +612,15 @@ summary:focus-visible {
   position: relative;
   z-index: 1;
   display: grid;
-  gap: var(--space-8);
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
 }
 
 .hero-content {
   text-align: center;
   max-width: 760px;
   margin-inline: auto;
+  min-width: 0;
 }
 
 .hero-content h1 {
@@ -616,19 +633,43 @@ summary:focus-visible {
   margin-bottom: var(--space-6);
 }
 
+/* Mobile: CTAs apiladas y estiradas a todo el ancho. Desde 480px pasan a fila. */
 .hero-actions {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: stretch;
   gap: var(--space-3);
-  justify-content: center;
   margin-bottom: var(--space-6);
+}
+
+.hero-actions .btn {
+  width: 100%;
+}
+
+@media (min-width: 480px) {
+  .hero-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-actions .btn {
+    width: auto;
+  }
 }
 
 .hero-trust {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: var(--space-2);
   justify-content: center;
+}
+
+@media (min-width: 420px) {
+  .hero-trust {
+    flex-wrap: nowrap;
+  }
 }
 
 .hero-trust .badge {
@@ -648,6 +689,7 @@ summary:focus-visible {
   max-width: 560px;
   margin-inline: auto;
   width: 100%;
+  min-width: 0;
 }
 
 .device-frame-bar {
@@ -677,6 +719,7 @@ summary:focus-visible {
   overflow: hidden;
   background: var(--color-white);
   border: 1px solid var(--color-border);
+  min-width: 0;
 }
 
 .module-carousel-header {
@@ -696,10 +739,13 @@ summary:focus-visible {
 
 .module-carousel-viewport {
   overflow: hidden;
+  min-width: 0;
 }
 
 .module-carousel-track {
   display: flex;
+  width: 100%;
+  min-width: 0;
   transition: transform 500ms ease;
 }
 
@@ -1416,14 +1462,11 @@ summary:focus-visible {
 .footer-brand {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
-  font-weight: var(--fw-bold);
-  color: var(--color-text-inverse);
 }
 
-.footer-brand img {
-  width: 32px;
-  height: 32px;
+.footer-brand-logo {
+  height: 24px;
+  width: auto;
 }
 
 .footer-links {
