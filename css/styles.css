@@ -76,8 +76,8 @@ button {
   --color-accent-dark: #0891b2;
   --color-accent-100: #e2f8fc;
 
-  --color-cta: #ff7a29;            /* naranja — acción principal, contrasta con el azul */
-  --color-cta-hover: #e8630f;
+  --color-cta: #7c3aed;            /* violeta — acción principal, contrasta con el azul */
+  --color-cta-hover: #6d28d9;
   --color-cta-text: #1a1002;
 
   --color-success: #00a86b;
@@ -708,7 +708,7 @@ summary:focus-visible {
   background: var(--color-border-strong);
 }
 
-.device-frame-bar span:nth-child(1) { background: #ff7a29; }
+.device-frame-bar span:nth-child(1) { background: #7c3aed; }
 .device-frame-bar span:nth-child(2) { background: #00c896; }
 .device-frame-bar span:nth-child(3) { background: #00b4d8; }
 
