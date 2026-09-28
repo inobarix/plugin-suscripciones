@@ -1216,6 +1216,11 @@ summary:focus-visible {
   font-size: var(--fs-body);
 }
 
+.faq-cta {
+  margin-top: var(--space-8);
+  text-align: center;
+}
+
 /* --------------------------------------------------------------------------
    12. CTA FINAL + FORMULARIO
    -------------------------------------------------------------------------- */
